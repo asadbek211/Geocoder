@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 
 class NetworkHelper(private val apiClient:Retrofit) {
     fun getClasses(listener: NetworkListener, lat: String, long: String){
-        val call = apiClient.create(ApiInterfase::class.java).getClasses("60.229917843587,11.16630979382")
+        val call = apiClient.create(ApiInterfase::class.java).getClasses(lat,long)
         call.enqueue(  object: Callback<Result> {
             override fun onResponse(
                 call: Call<Result>,
